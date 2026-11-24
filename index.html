@@ -1,1 +1,97 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Little Universe ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;color:white;text-align:center;
+ font-family:Georgia,serif;
+ background:radial-gradient(ellipse at bottom,#18264b 0%,#080d20 65%,#02040d 100%);
+ overflow-x:hidden;
+}
+.stars{
+ position:fixed;inset:0;pointer-events:none;
+ background-image:radial-gradient(white 1px,transparent 1px);
+ background-size:45px 45px;opacity:.45;
+}
+main{position:relative;z-index:1;min-height:100vh;
+ display:flex;align-items:center;justify-content:center;padding:25px}
+.panel{
+ width:min(100%,520px);padding:35px 24px;
+ border:1px solid #ffffff45;border-radius:24px;
+ background:#101a35c9;box-shadow:0 0 45px #617bff35;
+}
+h1{font-size:clamp(30px,8vw,44px);color:#f4d9ff}
+p{line-height:1.9;color:#e4e6ff}
+input,button{
+ width:100%;padding:14px;border-radius:30px;
+ font-size:16px;margin-top:12px;
+}
+input{border:1px solid #a7a9ff;background:#ffffff12;color:white;text-align:center}
+button{border:0;background:linear-gradient(90deg,#9b6bdb,#e58ab9);
+ color:white;font-weight:bold;cursor:pointer}
+.rocket{font-size:65px;margin:20px;animation:float 3s infinite ease-in-out}
+@keyframes float{50%{transform:translateY(-15px)}}
+.hidden{display:none}
+.photo{
+ width:100%;max-height:340px;object-fit:contain;
+ border-radius:18px;margin:18px 0;border:1px solid #ffffff55;
+}
+.heart{font-size:30px;color:#ff9fc9}
+</style>
+</head>
+<body>
+<div class="stars"></div>
+<main>
+<section class="panel" id="login">
+ <div class="rocket">🚀</div>
+ <h1>Welcome to My Universe</h1>
+ <p>A little world made just for you...</p>
+ <input id="password" type="password" placeholder="Enter our secret password">
+ <button onclick="unlock()">Unlock My World ❤️</button>
+ <p id="error"></p>
+ <p><small>Just you... always ❤️</small></p>
+</section>
+
+<section class="panel hidden" id="memories">
+ <div class="rocket">🚀</div>
+ <h1>Our Little Universe</h1>
+ <p>In a universe full of stars, you are my favorite one.</p>
+ <div class="heart">♥ ♥ ♥</div>
+ <h2>My Favorite Person</h2>
+ <p>Every moment with you becomes a beautiful memory.</p>
+ <p>I'm so lucky to have you in my life.</p>
+ <h2>My Wishes For You ✨</h2>
+ <p>I hope you get your dream car.</p>
+ <p>I hope you achieve everything you dream of in your career.</p>
+ <p>And I hope we get to build a beautiful life together.</p>
+ <h2>One Last Thing...</h2>
+ <p>Happy birthday, my love. I wish you endless happiness, success, and a life full of beautiful moments.</p>
+ <p>I hope we stay together through every chapter of life, today and forever.</p>
+ <p><strong>Thank you for being in my life.</strong></p>
+ <h1>I LOVE YOU SO MUCH, MY LOVE ❤️</h1>
+ <p>Forever yours. ♾️</p>
+</section>
+</main>
+<script>
+function unlock(){
+ const pass=document.getElementById('password').value;
+ if(pass==='love'){
+  document.getElementById('login').classList.add('hidden');
+  document.getElementById('memories').classList.remove('hidden');
+  window.scrollTo(0,0);
+ }else{
+  document.getElementById('error').textContent='Try again, my love ❤️';
+ }
+}
+document.getElementById('password').addEventListener('keydown',function(e){
+ if(e.key==='Enter')unlock();
+});
+</script>
+</body>
+  </html>
+  
