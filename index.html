@@ -5,124 +5,103 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Our Little Universe ❤️</title>
 <style>
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: linear-gradient(135deg,#170b2c,#401333,#160d29);
-  color: white;
-  font-family: Georgia, serif;
-  text-align: center;
-  padding: 25px 15px;
-}
-#login {
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-input, button {
-  padding: 13px;
-  border-radius: 25px;
-  border: none;
-  margin: 10px;
-  font-size: 16px;
-}
-button {
-  background: #f4a6c1;
-  color: #321027;
-  cursor: pointer;
-}
-#memories { display: none; max-width: 650px; margin: auto; }
-section { margin: 45px auto; }
-h1, h2 { color: #ffc4dc; }
-img {
-  width: 100%;
-  max-width: 450px;
-  border-radius: 20px;
-  box-shadow: 0 0 20px #f4a6c1;
-}
-.letter {
-  text-align: left;
-  line-height: 1.9;
-  background: #ffffff12;
-  padding: 22px;
-  border-radius: 18px;
-}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:#fff;text-align:center;font-family:Georgia,serif;
+background:radial-gradient(ellipse at bottom,#1b2b55 0%,#080d20 65%,#02040d 100%);overflow-x:hidden}
+.stars{position:fixed;inset:0;pointer-events:none;opacity:.42;
+background-image:radial-gradient(#fff 1px,transparent 1.5px),radial-gradient(#bfcaff 1px,transparent 1.5px);
+background-size:47px 47px,83px 83px;background-position:0 0,21px 35px}
+main{position:relative;z-index:1;min-height:100vh;padding:22px 12px;display:flex;align-items:center;justify-content:center}
+.panel{width:min(100%,760px);padding:clamp(16px,4vw,30px);margin:auto;border:1px solid #ffffff45;border-radius:24px;
+background:rgba(8,13,34,.82);box-shadow:0 0 50px #7788ff30;backdrop-filter:blur(7px)}
+.hidden{display:none!important}
+h1{font-size:clamp(28px,7vw,44px);color:#f5dfff;margin:16px 0}
+h2{font-size:clamp(22px,5vw,30px);color:#ffc5df;margin:24px 0 10px}
+p{line-height:1.85;color:#eef0ff}
+input,button{width:min(100%,360px);padding:14px 18px;border-radius:28px;font-size:16px;margin-top:12px}
+input{border:1px solid #c8b5ff;background:#10152f;color:white;text-align:center}
+button{border:0;background:linear-gradient(90deg,#9b6bdb,#e58ab9);color:white;font-weight:bold;cursor:pointer}
+#error{min-height:22px;color:#ffb6d5}
+.hero-art{display:block;width:min(100%,570px);height:auto;margin:0 auto 12px;border-radius:18px;box-shadow:0 12px 35px #0008}
+.art{display:block;width:min(100%,560px);height:auto;margin:18px auto;border-radius:18px;border:1px solid #ffffff55;box-shadow:0 12px 35px #0008}
+.memory{margin:25px auto;padding:18px 12px;border:1px solid #ffffff30;border-radius:20px;background:#ffffff08}
+iframe{width:100%;max-width:560px;height:200px;border:0;border-radius:14px;margin-top:12px}
+.small{font-size:13px;color:#c9cbe6}
+.rocket{font-size:48px;animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+@media(max-width:480px){.panel{padding:14px}.memory{padding:14px 8px}iframe{height:190px}}
 </style>
 </head>
 <body>
-
-<div id="login">
-  <h1>🚀 Our Little Universe ❤️</h1>
-  <p>A little surprise made just for you.</p>
-  <input type="password" id="password" placeholder="Enter the secret password">
-  <button onclick="unlock()">Open My Heart ❤️</button>
+<div class="stars"></div>
+<main>
+<section class="panel" id="login">
+  <img class="hero-art" src="login-space.png" alt="A special surprise among the stars">
+  <p>Our little universe is waiting for you...</p>
+  <input id="password" type="password" placeholder="Enter our secret password" autocomplete="off">
+  <button onclick="unlock()">Unlock My World 🚀</button>
   <p id="error"></p>
-</div>
-
-<div id="memories">
-
-<section>
-  <h1>🎵 A Song For You</h1>
-  <p>This song reminds me of you.</p>
-  <iframe width="100%" height="220"
-    src="https://www.youtube-nocookie.com/embed/Rtd8yHrlgXY"
-    title="Our song" frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
+  <p class="small">Just you... always ❤️</p>
 </section>
 
-<section>
-  <h2>Our Little Star 🌟</h2>
-  <img src="childhood-planets.png" alt="Your childhood memory">
+<section class="panel hidden" id="memories">
+  <div class="rocket">🚀 ✨</div>
+  <h1>Our Little Universe</h1>
+  <p>In a universe full of stars, you are my favorite one.</p>
+
+  <section class="memory">
+    <h2>Our Little Story ❤️</h2>
+    <img class="art" src="our-photo-card.png" alt="Our birthday memory together">
+    <p>Every moment with you becomes a beautiful memory. I'm so lucky to have you in my life.</p>
+  </section>
+
+  <section class="memory">
+    <h2>Look at This Little Star 🌟</h2>
+    <img class="art" src="childhood-planets.png" alt="A childhood memory among planets">
+    <p>From the little boy in this picture to the man I love today, I hope life always gives you reasons to smile.</p>
+  </section>
+
+  <section class="memory">
+    <h2>Our Song 🎶</h2>
+    <p>A song that reminds me of you...</p>
+    <iframe src="https://www.youtube-nocookie.com/embed/Rtd8yHrlgXY"
+      title="Our Song" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p class="small">Press play to listen ❤️</p>
+  </section>
+
+  <section class="memory">
+    <h2>Your Biggest Wishes ✨</h2>
+    <p>I hope all your dreams come true...</p>
+    <p>🚘 I hope you get your dream car.</p>
+    <p>⭐ I hope you achieve everything you dream of in your work.</p>
+    <p>💍 And I hope we get to marry each other and build a beautiful life together.</p>
+    <p>Because you deserve the best.</p>
+  </section>
+
+  <section class="memory">
+    <h2>My Last Wish for You ❤️</h2>
+    <img class="art" src="final-wish.png" alt="My last wish for you among the stars">
+    <p>My love, I wish you a lifetime full of happiness and beautiful moments. I hope you achieve every dream you've ever wished for and find success in everything you do.</p>
+    <p>I hope we build a beautiful life together, make unforgettable memories, and stay together forever.</p>
+    <p>I'm so excited about our future together and all the beautiful moments waiting for us.</p>
+    <h1>Thank you for being in my life.</h1>
+    <h1>I LOVE YOU SO MUCH, MY LOVE ❤️</h1>
+    <p>Forever yours. ♾️</p>
+  </section>
 </section>
-
-<section>
-  <h2>Happy Birthday, My Love ❤️</h2>
-  <img src="our-photo-card.png" alt="Our special picture">
-  <p>
-    Every year, may you be happy.<br>
-    Every year, may we stay together.<br>
-    You are the most important person in my life.<br>
-    I love you. ❤️
-  </p>
-</section>
-
-<section>
-  <h2>To My Favorite Person ❤️</h2>
-  <div class="letter">
-    My love,
-
-    I hope your birthday brings you all the happiness your heart deserves.
-    I wish you success in everything you do, and I hope all your dreams come true.
-
-    I want to see you achieve everything you've ever wished for.
-    I hope life gives you beautiful moments, endless reasons to smile,
-    and a future brighter than you imagine.
-
-    I wish for us to keep choosing each other, to share more memories,
-    laugh together, support each other, and build a beautiful life side by side.
-
-    Thank you for being in my life. I LOVE YOU SO MUCH, MY LOVE ❤️.
-
-    Forever yours. ♾️
-  </div>
-</section>
-
-</div>
-
+</main>
 <script>
-function unlock() {
-  if (document.getElementById("password").value === "love") {
-    document.getElementById("login").style.display = "none";
-    document.getElementById("memories").style.display = "block";
-  } else {
-    document.getElementById("error").textContent = "Wrong password. Try again ❤️";
+function unlock(){
+  if(document.getElementById('password').value==='love'){
+    document.getElementById('login').classList.add('hidden');
+    document.getElementById('memories').classList.remove('hidden');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }else{
+    document.getElementById('error').textContent='Try again, my love ❤️';
   }
 }
+document.getElementById('password').addEventListener('keydown',function(e){if(e.key==='Enter')unlock();});
 </script>
-
 </body>
-  </html>
+</html>
